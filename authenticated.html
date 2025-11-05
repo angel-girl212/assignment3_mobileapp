@@ -156,19 +156,37 @@ function TrackUser() {
   }
 }
 
+//takes as input variables, reads and sends them to the 
+//writetojson.php file.
+
+function writeToCSV(timestamp_in, userID_in, lat_in, lng_in){
+	var user = {
+    timestamp_in: encodeURIComponent(timestamp_in),
+    userID_in: encodeURIComponent(userID_in),
+    lat_in: encodeURIComponent(lat_in),
+    lng_in: encodeURIComponent(lng_in),
+	};	
+	if(window.XMLHttpRequest){xmlhttp=new XMLHttpRequest();}
+	else{xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");}
+	var url = "?timestamp="+user.timestamp_in+"&userID="+user.userID_in+"&lat="+user.lat_in+"&lng="+user.lng_in;
+	var sendUrl = 'writetojson.php' + url;
+	xmlhttp.open("GET", sendUrl, false); 
+	xmlhttp.send();
+}
+
 
 
 // Get the position of the user 
 function success(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let time = new Date()
+  let time = new Date();
 
   // Assign the Xarray to the array specific to the selected user
   let Xarray;
   if (SelectedUser == "Ben"){
      Xarray = BenArray
-     }
+  }
   else if (SelectedUser == "Kyra"){
      Xarray = KyraArray
   }
@@ -178,6 +196,9 @@ function success(position) {
 
   // Concatenate the specific user array with lat, lon, and time of data collection
   Xarray.push({lat: lat, lon: lon, time: time});
+
+ // write data to csv function
+ writeToCSV(time.toISOString(), SelectedUser, lat, lon);
 
   // get the length of the specific user array 
   let entry_count = Xarray.length;
@@ -191,7 +212,7 @@ function success(position) {
   document.getElementById("Tracking_the_Track").innerHTML = "Entries: " + entry_count
 
 }
-
+ 
 // If an error occurs, go to the error function (instead of success)
 function error() {
   alert("Sorry, no position available.");
@@ -208,3 +229,4 @@ function StartTime() {
 
 </body>
 </html>
+
