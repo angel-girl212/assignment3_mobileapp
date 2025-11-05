@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Set style Parameters for the fropdown menu button.
+ Note that the general format for this section was obtained from the W3Schools Hoverable Dropdown tutorial*/
+
+.dropbtn {
+  background-color: rgb(255, 94, 125);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: rgb(255, 0, 0);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+
+</head>
+
+<!-- Create title section for the page -->
+
+<body style="background-color:	rgb(255, 230, 204);">
+
+<h1 style="font-family: 'Copperplate', fantasy; border-style: groove; border-width: 8px; border-color: #ffd11a; text-align;center; display: flex; align-items: center; justify-content: center;">
+    <img src="images/bee.png" style="height: 100px;">
+  Tracker Jacker
+    <img src="images/bee.png" style="height: 100px; transform: scaleX(-1);">
+</h1>
+
+
+<!-- Dropdown menu details (for the click to select user ID button) 
+      Call the ShowDropdown() function -->
+
+<div class="dropdown" id = "dropdown" style="text-align:center;display: flex; flex-direction:column;align-items: center;">
+  <h2 style="font-family: 'Copperplate', fantasy;">Please Select a User ID</h2>
+  <button onclick="ShowDropdown()" class="dropbtn" id = "dropdownbutton" style="font-family: 'Copperplate', fantasy; border-style: groove; border-width: 7px; border-color: #ffd11a; "> <h2> Click to Select User ID </h2> </button>
+  <div id="myDropdown" class="dropdown-content">
+    <!-- Create options for each group member (and instructor) -->
+    <a href="#" onclick="DisplayUser('Ben')" >Ben</a>
+    <a href="#" onclick="DisplayUser('Kyra')">Kyra</a>
+    <a href="#" onclick="DisplayUser('Jack')">Jack</a>
+    <a href="#" onclick="DisplayUser('Instructor')">Instructor</a>
+  </div>
+</div>
+
+
+<!-- Create a button for tracking the selected user (assigned in the previous button) 
+      Call both the TrackUser() and StartTime() functions upon clicking -->
+
+<div class="dropdown" id = "dropdown" style="text-align:center;display: flex; flex-direction:column;align-items: center;">
+  <h2 style="font-family: 'Copperplate', fantasy;"> Start the Tracking</h2>
+<button onclick="TrackUser(); StartTime()" id = "TrackerButton" style="font-family: 'Copperplate', fantasy; border-style: groove; border-width: 7px; border-color: #ffd11a; background-color: rgb(255, 94, 125); color: white; cursor: grab;"> <h2> Click to Track </h2> </button>
+<div  style="font-family: 'Copperplate', fantasy; border-style: groove; border-width: 5px; border-color: #ffd11a; padding: 10px; margin: 10px;"> 
+    <p id="Tracking_the_Track"> Entry Counter Will Appear Once Tracking is Started </p>
+
+    <p id="start_time"> </p>
+</div>
+
+
+<!-- //////////////////////////// JavaScript code below /////////////////////////////////////// -->
+
+<script>
+
+// Information for the following functions were obtained from various W3School tutorials
+
+// Get the dropdown menu to appear once the userID button is clicked 
+function ShowDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Document the user that is selected from the dropdown menu
+let SelectedUser = null;
+function DisplayUser(UserID){
+  SelectedUser = UserID;
+  document.getElementById("dropdownbutton").innerHTML = "<h2>" + "Selected User: " + UserID + "</h2>";
+  document.getElementById("dropdownbutton").style.backgroundColor = "#39ac39"; 
+}
+
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+// Moving on to the Click to Track button:
+
+// Initialize variables
+const x = document.getElementById("demo");
+const BenArray = [];
+const KyraArray = [];
+const JackArray = [];
+let Interval = null;
+
+// Create function to track the movement of the selected user when the Click to Track button is called 
+function TrackUser() {
+
+  // If no user is selected, alert
+  if (!SelectedUser) {
+    alert("User Selection Required!");
+    return; // stop the function
+  }
+ 
+  // If user is selected and no errors occur, start the tracking.
+  // using setInterval, repeat function every 30 seconds.
+  // (Calls success function)
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+    Interval = setInterval(function() {
+      navigator.geolocation.getCurrentPosition(success, error);
+      }, 30000);
+  } 
+  // If other issues occurs:
+  else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+
+
+// Get the position of the user 
+function success(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let time = new Date()
+
+  // Assign the Xarray to the array specific to the selected user
+  let Xarray;
+  if (SelectedUser == "Ben"){
+     Xarray = BenArray
+     }
+  else if (SelectedUser == "Kyra"){
+     Xarray = KyraArray
+  }
+  else {
+     Xarray = JackArray
+  }
+
+  // Concatenate the specific user array with lat, lon, and time of data collection
+  Xarray.push({lat: lat, lon: lon, time: time});
+
+  // get the length of the specific user array 
+  let entry_count = Xarray.length;
+
+  // Display which user is being tracked
+  document.getElementById("TrackerButton").innerHTML = "<h2> Tracking " + SelectedUser + "</h2>"
+  // Change the background colour of the button
+  document.getElementById("TrackerButton").style.backgroundColor = "#39ac39"
+
+  // Actively record the number of entries that are being recorded during the tracking session
+  document.getElementById("Tracking_the_Track").innerHTML = "Entries: " + entry_count
+
+}
+
+// If an error occurs, go to the error function (instead of success)
+function error() {
+  alert("Sorry, no position available.");
+}
+
+// Create function to record the exact time that the user begins tracking. Display on the page. 
+function StartTime() {
+  const start_time = new Date();
+  document.getElementById("start_time").innerHTML = "Start of Tracking Session: <br>" + start_time.toString();
+}
+
+
+</script>
+
+</body>
+</html>
