@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+#map {
+   padding: 0px; 
+   width: calc(100% - 20px); /* Full width minus small margins */
+   height: calc(100vh - 180px); /* Full viewport height minus top/bottom margins*/
+   border-radius: 8px;
+   margin: 10px; /* Small margin on all sides */
+   box-sizing: border-box; /* Include border in dimensions */
+}
+
+.marker {
+   background-image: url(''); /* empty to allow conditional iconography */
+   background-size: cover;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   cursor: pointer;
+}
+
+#legend {
+  position: absolute;
+  bottom: 55px;
+  left: 55px;
+  z-index: 3;
+  background: rgb(255, 230, 204);
+  border: 2px solid #ffd11a;
+  box-shadow: 0 4px 12px black;
+  border-radius: 10px;
+  padding: 80px 10px;
+  max-width: 150px;
+  max-height: 150px;
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- Mapbox GL JS library for interactive maps -->
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+
+</head>
+
+<body style="background-color:	rgb(255, 230, 204);">
+
+<h1 style="font-family: 'Copperplate', fantasy; border-style: groove; border-width: 8px; border-color: #ffd11a; text-align: center; display: flex; align-items: center; justify-content: center;">
+    <img src="images/bee.png" style="height: 100px;">
+  Tracker Jacker
+    <img src="images/bee.png" style="height: 100px; transform: scaleX(-1);">
+</h1>
+
+<div id="map"></div>
+
+<div id="legend" style="background:rgb(255, 230, 204); padding: 10px; border-radius:0px; "> 
+  <h2 style= "text-align:center; font-family:Copperplate;font-size: 15px;" > Track our group members </h2> 
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+       <button type="button"  onclick="showKyra()" style = "background-color: #ffd11a; cursor: pointer; padding: 10px; font-size: 10px; margin: 2px; font-family: Copperplate"> Kyra's path </button> 
+        <button type="button" onclick="showJack()" style = "background-color: #ffd11a; cursor: pointer; padding: 10px; font-size: 10px; margin: 2px; font-family: Copperplate"> Jack's path </button>
+        <button type="button" onclick="showBen()" style = "background-color: #ffd11a; cursor: pointer; padding: 10px; font-size: 10px; margin: 2px; font-family: Copperplate"> Ben's path </button>
+        <button type="button" onclick="showAll()" style = "background-color: #ffd11a; cursor: pointer; padding: 10px; font-size: 10px; margin: 2px; font-family: Copperplate"> All paths </button> 	</div> 
+</div> 
+
+<script>
+// Mapbox access token for API authentication
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbGUta3ByIiwiYSI6ImNtZjJybG10YzFkbnUycG80N3J5cDVid2QifQ.SoIeeUn_3CNLmzU2cgtv1w';
+
+// Initialize Mapbox map
+const map = new mapboxgl.Map({
+container: 'map', // container ID
+
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+style: 'mapbox://styles/angle-kpr/cmhjodzcw007j01qi7hct64r4',
+center: [-73.56536765931561, 45.50226961493052], // downtown
+zoom: 12 
+}); 
+
+//add a geojson(json) layer to the map
+//replace everything within the < > appropriately 
+map.on('load', function() {
+  //the url (name) of the .json file - must be in same folder as the javascript var url = <USERNAME>.json';
+  //add a source
+  // Kyra's pathway
+  map.addSource('kyra', { type: 'geojson', data: 'Kyra.json'});
+  map.addLayer({
+    id: "kyra",
+    type: "line",
+    source: "kyra",
+    layout: {
+      'visibility': 'none'
+    },
+    paint: {
+      'line-color': '#FF69B4',
+      'line-width': 4
+    }
+  });
+
+  // Jack's pathway
+  map.addSource('jack', { type: 'geojson', data: 'Jack.json'});
+  map.addLayer({
+    id: "jack",
+    type: "line",
+    source: "jack",
+    layout: {
+      'visibility': 'none'
+    },
+    paint: {
+      'line-color': '#4169E1',
+      'line-width': 4
+    }
+  });         
+
+  // Ben's pathway 
+  map.addSource('ben', { type: 'geojson', data: 'Ben.json'});
+  map.addLayer({
+    id: "ben",
+    type: "line",
+    source: "ben",
+    layout: {
+      'visibility': 'none' // Hidden by default
+    },
+    paint: {
+      'line-color': '#32CD32', // Lime green
+      'line-width': 4
+    }
+  });
+
+});         
+
+function showKyra() { // this enables the kyra line segment
+    map.setLayoutProperty('kyra', 'visibility', 'visible');
+    map.setLayoutProperty('jack', 'visibility', 'none');
+    map.setLayoutProperty('ben', 'visibility', 'none');
+} 
+
+function showJack() { 
+    map.setLayoutProperty('kyra', 'visibility', 'none');
+    map.setLayoutProperty('jack', 'visibility', 'visible');
+    map.setLayoutProperty('ben', 'visibility', 'none');
+}
+
+function showBen() {
+    map.setLayoutProperty('kyra', 'visibility', 'none');
+    map.setLayoutProperty('jack', 'visibility', 'none');
+    map.setLayoutProperty('ben', 'visibility', 'visible');
+}
+
+function showAll() {
+  map.setLayoutProperty('kyra', 'visibility', 'visible');
+  map.setLayoutProperty('jack', 'visibility', 'visible');
+  map.setLayoutProperty('ben', 'visibility', 'visible');
+}
+
+</script>
+
+<!--adds *extra* atm map layer, kept seperate for cleanliness-->
+<script src="assets/config.js"></script>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl509615'},{'dcenter':'p3'},{'cp_id':'10541863'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script>
+</body>
+</html>
