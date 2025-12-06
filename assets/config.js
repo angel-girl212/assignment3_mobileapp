@@ -1,0 +1,607 @@
+const geojson = {
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-11-03T16:03:30Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/460946341",
+        "amenity": "atm",
+        "brand": "Desjardins",
+        "brand:wikidata": "Q2933350",
+        "cash_in": "yes",
+        "check_date": "2024-10-13",
+        "operator": "Desjardins",
+        "operator:wikidata": "Q2933350"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.561204,
+          45.5131752
+        ]
+      },
+      "id": "node/460946341"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/914770829",
+        "addr:housenumber": "2401",
+        "amenity": "atm",
+        "name": "Photodépot",
+        "shop": "copyshop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5769038,
+          45.4855653
+        ]
+      },
+      "id": "node/914770829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1202701287",
+        "amenity": "atm",
+        "brand": "CIBC",
+        "brand:wikidata": "Q666694",
+        "brand:wikipedia": "en:Canadian Imperial Bank of Commerce",
+        "check_date": "2023-11-11",
+        "name": "CIBC",
+        "operator": "CIBC",
+        "operator:wikidata": "Q666694",
+        "operator:wikipedia": "en:Canadian Imperial Bank of Commerce",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.571094,
+          45.498267
+        ]
+      },
+      "id": "node/1202701287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1205171479",
+        "amenity": "atm",
+        "brand": "CIBC",
+        "brand:wikidata": "Q666694",
+        "name": "CIBC",
+        "operator": "CIBC",
+        "operator:wikidata": "Q666694"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5680256,
+          45.5035674
+        ]
+      },
+      "id": "node/1205171479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1205203045",
+        "amenity": "atm",
+        "brand": "BMO",
+        "brand:wikidata": "Q806693",
+        "check_date": "2025-10-25",
+        "drive_through": "no",
+        "official_name": "Bank of Montreal",
+        "operator": "BMO",
+        "operator:wikidata": "Q806693"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5788835,
+          45.4959885
+        ]
+      },
+      "id": "node/1205203045"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1214666807",
+        "amenity": "atm",
+        "brand": "RBC",
+        "brand:wikidata": "Q735261",
+        "official_name": "Royal Bank of Canada",
+        "operator": "RBC",
+        "operator:wikidata": "Q735261",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.57861,
+          45.495631
+        ]
+      },
+      "id": "node/1214666807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2316590959",
+        "amenity": "atm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5982116,
+          45.5257828
+        ]
+      },
+      "id": "node/2316590959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2519449689",
+        "amenity": "atm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5816147,
+          45.4914236
+        ]
+      },
+      "id": "node/2519449689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2537196249",
+        "amenity": "atm",
+        "brand": "BMO",
+        "brand:wikidata": "Q806693",
+        "official_name": "Bank of Montreal",
+        "operator": "BMO",
+        "operator:wikidata": "Q806693"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5583793,
+          45.5177585
+        ]
+      },
+      "id": "node/2537196249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3140206292",
+        "addr:unit": "194",
+        "amenity": "atm",
+        "check_date": "2014-10-18",
+        "name": "Montreal Bitcoin ATM Suite #194",
+        "opening_hours": "Mo-Su 9:00-21:00",
+        "operator": "Montreal Bitcoin Brokers",
+        "website": "http://www.facebook.com/montrealbitcoin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5865138,
+          45.4878564
+        ]
+      },
+      "id": "node/3140206292"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3199165326",
+        "addr:city": "Montréal",
+        "addr:housenumber": "3608",
+        "addr:postcode": "H2X 2V4",
+        "addr:province": "QC",
+        "addr:street": "Boulevard Saint-Laurent",
+        "amenity": "atm",
+        "branch": "La Belle Province",
+        "brand": "Instacoin",
+        "brand:wikidata": "Q133247271",
+        "cash_in": "yes",
+        "check_date": "2023-10-14",
+        "currency:BCH": "yes",
+        "currency:CAD": "yes",
+        "currency:XBT": "yes",
+        "indoor": "yes",
+        "manufacturer": "Lamassu",
+        "name": "Instacoin Bitcoin ATM",
+        "note": "Bitcoin ATM in La Belle Province.",
+        "opening_hours": "Su-We 11:00-05:00; Th-Sa 11:00-06:00",
+        "operator": "Instacoin",
+        "payment:cash": "yes",
+        "payment:lightning": "no",
+        "payment:lightning_contactless": "no",
+        "payment:onchain": "yes",
+        "start_date": "2014-11-21",
+        "url": "https://coinatmradar.com/bitcoin_atm/325/bitcoin-atm-lamassu-montreal-la-belle-province/",
+        "website": "https://www.instacoinatm.com/bitcoin-montreal-belleprovince-en.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5729378,
+          45.5139191
+        ]
+      },
+      "id": "node/3199165326"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3944585826",
+        "addr:city": "Montréal",
+        "addr:housenumber": "377",
+        "addr:postcode": "H2T 1G7",
+        "addr:province": "QC",
+        "addr:street": "Avenue Laurier Est",
+        "amenity": "atm",
+        "drive_through": "no",
+        "name": "ATM (Desjardins)",
+        "operator": "Desjardins"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5899053,
+          45.5265637
+        ]
+      },
+      "id": "node/3944585826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4466384990",
+        "amenity": "atm",
+        "brand": "Desjardins",
+        "brand:wikidata": "Q2933350",
+        "check_date": "2022-06-26",
+        "operator": "Desjardins",
+        "operator:wikidata": "Q2933350"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5713733,
+          45.5206933
+        ]
+      },
+      "id": "node/4466384990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5171383129",
+        "amenity": "atm",
+        "check_date": "2021-07-12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5215499,
+          45.52459
+        ]
+      },
+      "id": "node/5171383129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6026218125",
+        "amenity": "atm",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5737667,
+          45.4984799
+        ]
+      },
+      "id": "node/6026218125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6955987441",
+        "amenity": "atm",
+        "atm": "yes",
+        "brand": "BMO",
+        "brand:wikidata": "Q806693",
+        "brand:wikipedia": "en:Bank of Montreal",
+        "drive_through": "no",
+        "name": "BMO",
+        "official_name": "Bank of Montreal",
+        "operator": "BMO",
+        "operator:wikidata": "Q806693",
+        "operator:wikipedia": "en:Bank of Montreal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5551676,
+          45.4993339
+        ]
+      },
+      "id": "node/6955987441"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9130588453",
+        "amenity": "atm",
+        "branch": "Dépanneur Vieux Montreal",
+        "brand": "Instacoin",
+        "brand:wikidata": "Q133247271",
+        "cash_in": "yes",
+        "check_date": "2024-01-04",
+        "currency:BCH": "yes",
+        "currency:CAD": "yes",
+        "currency:XBT": "yes",
+        "indoor": "yes",
+        "manufacturer": "Lamassu",
+        "name": "Instacoin ATM",
+        "opening_hours": "Mo-Sa 09:00-23:00; Su 09:00-22:00",
+        "operator": "Instacoin",
+        "payment:cash": "yes",
+        "payment:onchain": "yes",
+        "start_date": "2017-05-12",
+        "url": "https://coinatmradar.com/bitcoin_atm/1917/bitcoin-atm-lamassu-montreal-depanneur-vieux-montreal/",
+        "website": "https://www.instacoinatm.com/bitcoin-montreal-vieux-montreal-en.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5557804,
+          45.5055377
+        ]
+      },
+      "id": "node/9130588453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9133106020",
+        "amenity": "atm",
+        "branch": "Dépanneur Xiaomin",
+        "cash_in": "yes",
+        "cash_out": "no",
+        "cash_withdrawal": "no",
+        "check_date": "2024-01-04",
+        "currency:BCH": "yes",
+        "currency:CAD": "yes",
+        "currency:XBT": "yes",
+        "indoor": "yes",
+        "manufacturer": "Lamassu",
+        "name": "Instacoin ATM",
+        "opening_hours": "Mo-Su 12:00-23:00",
+        "operator": "Instacoin",
+        "payment:cash": "yes",
+        "payment:onchain": "yes",
+        "start_date": "2020-09-01",
+        "url": "https://coinatmradar.com/bitcoin_atm/15799/bitcoin-atm-lamassu-montreal-depanneur-xiaomin/",
+        "website": "https://www.instacoinatm.com/bitcoin-montreal-depanneur-xiaomin-en.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5826017,
+          45.4926225
+        ]
+      },
+      "id": "node/9133106020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9504426910",
+        "addr:housenumber": "1866",
+        "addr:street": "Rue Sainte-Catherine Ouest",
+        "amenity": "atm",
+        "cash_in": "no",
+        "check_date": "2024-05-19",
+        "indoor": "yes",
+        "name": "Dépanneur 7 Jours",
+        "opening_hours": "24/7",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "shop": "convenience",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5802017,
+          45.4928438
+        ]
+      },
+      "id": "node/9504426910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10566146007",
+        "addr:city": "Montréal",
+        "addr:housenumber": "819",
+        "addr:postcode": "H2S 1Z7",
+        "addr:province": "Québec",
+        "addr:street": "Boulevard Rosemont",
+        "amenity": "atm",
+        "cash_in": "yes",
+        "cash_out": "yes",
+        "cash_withdrawal": "yes",
+        "check_date": "2024-05-20",
+        "currency:CAD": "yes",
+        "currency:XBT": "yes",
+        "indoor": "yes",
+        "level": "0",
+        "manufacturer": "Lamassu",
+        "name": "Aucoin ATM",
+        "opening_hours": "24/7",
+        "operator": "Aucoin",
+        "payment:cash": "yes",
+        "payment:onchain": "yes",
+        "phone": "+1-514-663-1945",
+        "website": "https://aucoinatm.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5963755,
+          45.5335576
+        ]
+      },
+      "id": "node/10566146007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10566166571",
+        "amenity": "atm",
+        "branch": "Dépanneur K, Montréal",
+        "cash_in": "yes",
+        "cash_out": "no",
+        "check_date": "2024-05-20",
+        "currency:CAD": "yes",
+        "currency:XBT": "yes",
+        "image": "https://batm-images-v3.s3.amazonaws.com/PXKSK4_BT101152/atmlocation_2_130524.jpg",
+        "indoor": "yes",
+        "level": "0",
+        "manufacturer": "General Bytes",
+        "name": "Localcoin Bitcoin ATM",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "operator": "Localcoin",
+        "payment:cash": "yes",
+        "payment:lightning": "no",
+        "payment:lightning_contactless": "no",
+        "payment:onchain": "yes",
+        "phone": "+1 877-412-2646",
+        "url": "https://coinatmradar.com/bitcoin_atm/7696/bitcoin-atm-general-bytes-montreal-depanneur-k/",
+        "website": "https://localcoinatm.com/bitcoin-atm/quebec/montreal/depanneur_k-at-900-boul-de-maisonneuve-e/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5593723,
+          45.5170372
+        ]
+      },
+      "id": "node/10566166571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11565246299",
+        "amenity": "atm",
+        "cash_in": "no",
+        "operator": "Stanley Sécurité"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5272381,
+          45.516191
+        ]
+      },
+      "id": "node/11565246299"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11565246300",
+        "amenity": "atm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5314524,
+          45.5126547
+        ]
+      },
+      "id": "node/11565246300"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11565246304",
+        "amenity": "atm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5274946,
+          45.5120482
+        ]
+      },
+      "id": "node/11565246304"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11841656915",
+        "amenity": "atm",
+        "cash_in": "yes",
+        "currency:CAD": "yes",
+        "drive_through": "no",
+        "network": "CIBC"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5763816,
+          45.5058636
+        ]
+      },
+      "id": "node/11841656915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12663438916",
+        "amenity": "atm",
+        "brand": "Banque Scotia",
+        "brand:wikidata": "Q451476",
+        "operator": "Banque Scotia",
+        "operator:wikidata": "Q451476"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5560893,
+          45.5188009
+        ]
+      },
+      "id": "node/12663438916"
+    }
+  ]
+}
+
+// add markers to map
+for (const feature of geojson.features) {
+  // create a HTML element for each feature
+  const el = document.createElement('div');
+  el.className = 'marker';
+  el.style.backgroundImage = "url('images/atm.png')";
+
+// make a marker for each feature and add it to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
+}
